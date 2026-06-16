@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AccessLift | Manutenção de Elevadores Especializada</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001f2a",
+                        "surface-container": "#f0eded",
+                        "surface-variant": "#e4e2e1",
+                        "background": "#fbf9f8",
+                        "on-secondary-container": "#003567",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary": "#005f7b",
+                        "on-surface": "#1b1c1c",
+                        "outline": "#8f6f6c",
+                        "primary-container": "#d32f2f",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#bee9ff",
+                        "primary": "#af101a",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed-dim": "#7bd1f8",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "on-tertiary-fixed-variant": "#004d65",
+                        "on-primary-fixed-variant": "#930010",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed": "#410003",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-container": "#e9f7ff",
+                        "on-primary-container": "#fff2f0",
+                        "outline-variant": "#e4beba",
+                        "surface-container-high": "#eae8e7",
+                        "on-surface-variant": "#5b403d",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#ba1a20",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-primary": "#ffb3ac",
+                        "inverse-on-surface": "#f2f0f0",
+                        "tertiary-container": "#00799c",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "secondary": "#005faf",
+                        "on-secondary-fixed": "#001c3a",
+                        "secondary-container": "#54a0fe",
+                        "on-secondary-fixed-variant": "#004786",
+                        "primary-fixed": "#ffdad6",
+                        "secondary-fixed": "#d4e3ff",
+                        "secondary-fixed-dim": "#a5c8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+    <header class="sticky top-0 z-50 bg-white border-b border-outline-variant transition-all duration-300">
+        <div
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+            <div class="flex items-center">
+                <img alt="AccessLift Logo" class="h-10 md:h-12 w-auto" src="imagens-site/logo-site.jpeg" />
+            </div>
+            <nav class="hidden md:flex gap-8">
+                <a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#servicos">Serviços</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#planos">Planos</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#contato">Contato</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a class="hidden md:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all active:scale-95"
+                    href="https://wa.me/5581973350593" target="_blank">
+                    Agendar Vistoria
+                </a>
+                <button class="md:hidden text-primary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Elevador moderno em prédio comercial" class="w-full h-full object-cover brightness-[0.4]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVh3UNtB37HWfdLESRHE_k2wKISYR4JZPIxoCN_3amaRw67GA9z36ggNgUOXyJYoMP2qT-ttGthiVyA-eGutNl_CzCxkLM1yd7Na-lplpUykT0gJnEM7WgDU2aZ-MmBBWEQyThD31mNMd0tjoAQbXACcmOr_VmPTqFLpuHEdhdTyBv36tlc7A3XIiQT19TJxdlHA8fFPTqwsgWGxCA0kFiZdY4nd3HXRB9wVSO_NStiRPbKiy4EALX99YS_AyTOGK01-P8EvSP0Ks" />
+        </div>
+        <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+            <div class="max-w-2xl text-white mx-auto text-center">
+                <h1
+                    class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+                    Somos especializados em manutenção de elevadores multimarcas.
+                </h1>
+                <p class="font-body-lg text-body-lg mb-10 text-surface-variant">
+                    Atendemos qualquer marca ou modelo de elevador com tecnologia de ponta e equipe técnica certificada.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-headline-md text-headline-md text-center hover:bg-primary-container transition-all active:scale-95 w-full sm:w-auto"
+                        href="https://wa.me/5581973350593" target="_blank">
+                        Agendar Vistoria
+                    </a>
+                    <a class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-headline-md text-headline-md text-center hover:bg-white/10 transition-all w-full sm:w-auto"
+                        href="#servicos">
+                        Nossos Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-primary py-12">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div
+                    class="flex items-center gap-6 text-white border-b md:border-b-0 md:border-r border-white/20 pb-8 md:pb-0">
+                    <span class="material-symbols-outlined text-5xl"
+                        style="font-variation-settings: 'FILL' 1;">support_agent</span>
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg">Atendimento 24hrs</h2>
+                        <p class="font-body-md text-body-md opacity-90">Todos os dias da semana</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-8 justify-center md:justify-end text-white">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined opacity-70">phone_iphone</span>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider opacity-70">Pernambuco</span>
+                            <a class="font-headline-md text-headline-md hover:underline"
+                                href="https://wa.me/5581973350593" target="_blank">(81) 97335-0593</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined opacity-70">phone_iphone</span>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider opacity-70">Paraíba</span>
+                            <a class="font-headline-md text-headline-md hover:underline"
+                                href="https://wa.me/5583998507998" target="_blank">(83) 99850-7998</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16">
+                <h2 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-4">Na AccessLift você
+                    pode confiar.</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <div class="p-8 border border-outline-variant hover:border-primary transition-colors text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform">verified</span>
+                    <h3 class="font-label-md text-label-md font-bold mb-2">Todas as Marcas</h3>
+                    <p class="text-sm text-on-surface-variant">Suporte completo independente do fabricante.</p>
+                </div>
+                <div class="p-8 border border-outline-variant hover:border-primary transition-colors text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform">schedule</span>
+                    <h3 class="font-label-md text-label-md font-bold mb-2">Atendimento 24hrs</h3>
+                    <p class="text-sm text-on-surface-variant">Prontidão absoluta para emergências diárias.</p>
+                </div>
+                <div class="p-8 border border-outline-variant hover:border-primary transition-colors text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform">digital_out_of_home</span>
+                    <h3 class="font-label-md text-label-md font-bold mb-2">Serviço Digital</h3>
+                    <p class="text-sm text-on-surface-variant">Relatórios e ordens de serviço 100% digitais.</p>
+                </div>
+                <div class="p-8 border border-outline-variant hover:border-primary transition-colors text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform">engineering</span>
+                    <h3 class="font-label-md text-label-md font-bold mb-2">Registro no CREA</h3>
+                    <p class="text-sm text-on-surface-variant">Certificação técnica e conformidade legal.</p>
+                </div>
+                <div class="p-8 border border-outline-variant hover:border-primary transition-colors text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform">distance</span>
+                    <h3 class="font-label-md text-label-md font-bold mb-2">Multimarcas</h3>
+                    <p class="text-sm text-on-surface-variant">Know-how especializado em diversos sistemas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-surface-container-low" id="servicos">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Nossos serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white rounded-lg overflow-hidden shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+                    <img class="w-full h-56 object-cover"
+                        data-alt="A professional technician in safety gear performing meticulous maintenance on an elevator's control panel inside a brightly lit, clean mechanical room. The environment is industrial and precise, mirroring the reliable service of AccessLift. The image features high contrast with clear focus on metallic surfaces and digital components, reflecting a modern corporate aesthetic."
+                        src="imagens-site/manutencao.jpeg" />
+                    <div class="p-8">
+                        <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Manutenção de elevadores e
+                            escadas</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Prevenção e correção periódica para
+                            garantir segurança total aos usuários.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-lg overflow-hidden shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+                    <img class="w-full h-56 object-cover"
+                        data-alt="A futuristic elevator interior with glowing LED strips, sleek glass panels, and a high-resolution touch-screen interface showing floor numbers. The aesthetic is ultra-modern and minimalist, emphasizing technological advancement and premium quality in modernization services. Sharp lines and cool lighting define the space, punctuated by subtle red brand highlights."
+                        src="imagens-site/modernizacao.jpeg" />
+                    <div class="p-8">
+                        <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Modernização de elevadores
+                        </h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Upgrade tecnológico e estético para
+                            valorizar o seu patrimônio.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-lg overflow-hidden shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+                    <img class="w-full h-56 object-cover"
+                        data-alt="A wide-angle shot of a luxurious, high-ceilinged building lobby featuring several state-of-the-art glass elevators ascending along a polished steel framework. Bright natural light fills the space, creating a sense of openness and professional excellence. The style is clean and corporate, focusing on the architectural beauty of new elevator installations."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdyXSt5zbCw2ffsHNAPJSnVMVB251S2GmnTj7wgmwwAa_GPGyBnw0FNbYIPYuKdlNq1ZgZx6fdtTB58TYVKPkF0k7kzOga8GqISFRTHHTORPpVsdCV2DAKiOB2LXzmq0MQ0q613kabxvHobvBG5AQPIjMpvOBPbw7BVO9JoCdCoHk0T0vllHNLqIc73Rsbz8148b4kANfPrerizLwxDoX48CWEuneL3TceIjMZZYMLWp1o-WnHSTSbOBBvKkl7la6EpiIJLBE7gfY" />
+                    <div class="p-8">
+                        <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Elevadores Novos</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Instalação de equipamentos de
+                            última geração com eficiência energética.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24" id="planos">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Conheça as melhores opções de
+                    contratos do mercado</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">Flexibilidade e transparência para
+                    condomínios e empresas.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-10 border-t-4 border-outline-variant bg-surface-container-low flex flex-col h-full">
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-6">Contratos parcial</h3>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Manutenção preventiva mensal</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Atendimento emergencial 24h</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Cobertura de peças selecionadas</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full border border-primary text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">Saber
+                        Mais</button>
+                </div>
+                <div
+                    class="p-10 border-t-4 border-primary bg-white shadow-xl flex flex-col h-full transform scale-105 z-10">
+                    <div class="bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">MAIS
+                        PROCURADO</div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-6">Contratos com peças</h3>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Incluso todas as peças de reposição</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Manutenção preventiva e corretiva</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Custo mensal fixo e previsível</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5581973350593" target="_blank"
+                        class="block text-center w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:bg-primary-container transition-all">Solicitar
+                        Orçamento</a>
+                </div>
+                <div class="p-10 border-t-4 border-outline-variant bg-surface-container-low flex flex-col h-full">
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-6">Contratos sem peças</h3>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Custo mensal reduzido</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Mão de obra especializada inclusa</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+                            <span class="text-on-surface-variant">Foco total em segurança preventiva</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full border border-primary text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">Saber
+                        Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-surface-container-highest">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Atendemos as principais marcas do mercado
+                </h2>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
+                <span
+                    class="font-headline-lg text-headline-lg grayscale hover:grayscale-0 transition-all cursor-default">TKE</span>
+                <span
+                    class="font-headline-lg text-headline-lg grayscale hover:grayscale-0 transition-all cursor-default">Schindler</span>
+                <span
+                    class="font-headline-lg text-headline-lg grayscale hover:grayscale-0 transition-all cursor-default">Otis</span>
+                <span
+                    class="font-headline-lg text-headline-lg grayscale hover:grayscale-0 transition-all cursor-default">Kone</span>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white relative overflow-hidden" id="contato">
+        <div
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-6 leading-tight">
+                    Agende agora uma visita técnica sem custo</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Nossa equipe entrará em contato para
+                    agendar a melhor data para a avaliação dos seus equipamentos.</p>
+                <div class="flex items-center gap-4 text-primary">
+                    <span class="material-symbols-outlined p-3 bg-primary-fixed rounded-full">verified_user</span>
+                    <span class="font-label-md text-label-md font-bold">Diagnóstico especializado e orçamento
+                        detalhado.</span>
+                </div>
+            </div>
+            <div class="bg-surface-container-low p-8 md:p-12 border border-outline-variant">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Nome</label>
+                        <input id="form-name" required
+                            class="w-full bg-white border border-outline-variant h-12 px-4 focus:ring-primary focus:border-primary"
+                            placeholder="Digite seu nome completo" type="text" />
+                    </div>
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Número
+                            (Telefone/WhatsApp)</label>
+                        <input id="form-phone" required
+                            class="w-full bg-white border border-outline-variant h-12 px-4 focus:ring-primary focus:border-primary"
+                            placeholder="(00) 00000-0000" type="tel" />
+                    </div>
+                    <div>
+                        <label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">E-mail</label>
+                        <input id="form-email" required
+                            class="w-full bg-white border border-outline-variant h-12 px-4 focus:ring-primary focus:border-primary"
+                            placeholder="seuemail@empresa.com" type="email" />
+                    </div>
+                    <button
+                        class="w-full bg-primary text-on-primary h-14 font-headline-md text-headline-md hover:bg-primary-container transition-all active:scale-95"
+                        type="submit">
+                        Enviar Solicitação
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-inverse-surface text-surface-variant py-16 border-t border-outline">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h2 class="text-white font-headline-md text-headline-md font-bold mb-6">Access Lift</h2>
+                    <p class="font-body-md text-body-md opacity-80 leading-relaxed">
+                        Referência em Pernambuco e Paraíba para manutenção de elevadores multimarcas. Segurança e
+                        confiabilidade para o seu dia a dia.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-label-md text-label-md font-bold uppercase mb-6 tracking-wider">Unidades
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-label-sm text-label-sm text-primary-fixed-dim">Pernambuco</p>
+                            <a class="font-body-md text-body-md hover:text-white" href="https://wa.me/5581998009403"
+                                target="_blank">(81) 97335-0593<br />Rua Rio Jaboatão, 440 - Cordeiro - Recife-PE</a>
+                        </div>
+                        <div>
+                            <p class="font-label-sm text-label-sm text-primary-fixed-dim">Paraíba</p>
+                            <a class="font-body-md text-body-md hover:text-white" href="https://wa.me/5583998507998"
+                                target="_blank">(83) 99850-7998<br />Rua Barbosa, 531, Sala 203 - Torre - João
+                                Pessoa-PB</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-body-md text-body-md opacity-60">© 2026 AccessLift - Todos os direitos reservados.</p>
+                <div class="flex gap-6 opacity-60">
+                    <a class="hover:text-white transition-all" href="#"><span
+                            class="material-symbols-outlined">share</span></a>
+                    <a class="hover:text-white transition-all" href="#"><span
+                            class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.add('h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.remove('h-16');
+                header.classList.add('h-20');
+            }
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const email = document.getElementById('form-email').value;
+
+            // WhatsApp Pernambuco
+            const whatsappNumber = '5581973350593';
+
+            const message = `Olá, gostaria de agendar uma visita técnica sem custo.\n\n*Dados do Lead:*\n- *Nome:* ${name}\n- *Telefone/WhatsApp:* ${phone}\n- *E-mail:* ${email}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+
+</html>
