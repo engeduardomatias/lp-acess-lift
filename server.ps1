@@ -17,9 +17,9 @@ try {
         # Decode path to handle URL encoding (e.g. spaces as %20) without requiring System.Web
         $rawPath = [System.Uri]::UnescapeDataString($request.Url.LocalPath)
         
-        # If the web request is just /, serve code.html
+        # If the web request is just /, serve index.html
         if ($rawPath -eq "/" -or $rawPath -eq "/index.html") {
-            $filePath = Join-Path $PSScriptRoot "code.html"
+            $filePath = Join-Path $PSScriptRoot "index.html"
         } else {
             $relativePath = $rawPath.TrimStart('/')
             $filePath = Join-Path $PSScriptRoot $relativePath
